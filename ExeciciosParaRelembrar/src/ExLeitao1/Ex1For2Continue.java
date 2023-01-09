@@ -4,13 +4,16 @@ public class Ex1For2Continue {
 
 	public static void main(String[] args) {
 		
-		for(int i = 0; i<10; i++) {
-			if(i%2==1) {
-				continue;//interrompe apenas essa interação  vai para proxima linha e depois volta
+		externo:for(int i = 0; i<3; i++) {
+			for(int j = 0;j<3;j++) {
+				if(i==1) {
+					break externo;
+				}
+				System.out.printf("d% d%",i,j);
 			}
-			System.out.println(i);
+			System.out.println();
 		}
-		
+		System.out.println("fim");
 	}
 
 }
