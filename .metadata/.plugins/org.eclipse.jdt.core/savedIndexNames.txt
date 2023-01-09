@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+/home/felipe/Área de Trabalho/ExerciciosParaRecordar/.metadata/.plugins/org.eclipse.jdt.core
+292577331.index
+1865797976.index
+2321527160.index
