@@ -43,6 +43,10 @@ public class DAO <E>{
 		return this;
 	}
 	
+	public E obterPorID(Object id) {
+		return em.find(classe, id);
+	}
+	
 	public DAO<E> incluirTransaction(E entidade){//metodo que vai fechar transação
 		em.persist(entidade);
 		return this;
