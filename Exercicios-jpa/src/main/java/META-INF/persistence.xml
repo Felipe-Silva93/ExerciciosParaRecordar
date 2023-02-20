@@ -8,6 +8,8 @@
 	<class>modelo.umpraum.Cliente</class>
 	<class>modelo.basico.umpramuitos.ItemPedido</class>
 	<class>modelo.basico.umpramuitos.Pedidos</class>
+	<class>modelo.basico.umpramuitosonetomany.ItemPedido2</class>
+	<class>modelo.basico.umpramuitosonetomany.Pedidos2</class>
 	
 	
 		
