@@ -2,6 +2,9 @@
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 	<persistence-unit name="Exercicios-jpa">
 	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+	
+	<mapping-file>META-INF/consulta.xml</mapping-file>
+	
 	<class>modelo.basico.Usuario</class>
 	<class>modelo.basico.Produto</class>
 	<class>modelo.umpraum.Assento</class>
@@ -10,6 +13,17 @@
 	<class>modelo.basico.umpramuitos.Pedidos</class>
 	<class>modelo.basico.umpramuitosonetomany.ItemPedido2</class>
 	<class>modelo.basico.umpramuitosonetomany.Pedidos2</class>
+	<class>modelo.basico.muitosparamuitos.Tio</class>
+	<class>modelo.basico.muitosparamuitos.Sobrinho</class>
+	<class>modelo.basico.muitosparamuitos.Filme</class>
+	<class>modelo.basico.muitosparamuitos.Ator</class>
+	<class>modelo.basico.composicao.Fornecedor</class>
+	<class>modelo.basico.composicao.Funcionario</class>
+	<class>modelo.basico.composicao.Endereco</class>
+	
+	
+	
+	
 	
 	
 		
