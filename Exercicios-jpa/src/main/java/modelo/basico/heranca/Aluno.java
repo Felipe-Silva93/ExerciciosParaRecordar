@@ -10,10 +10,10 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 @Entity
-@Inheritance (strategy = InheritanceType.SINGLE_TABLE) /*TABLE_PER_CLASS) para cada classe concreta vou ter uma tabela
+@Inheritance (strategy = InheritanceType.TABLE_PER_CLASS) /*TABLE_PER_CLASS) para cada classe concreta vou ter uma tabela
 caso momente essa anotação, vai ser criado uma unica tabela juntando as sua  com se fosse SINGLE_TABLE */ //anotação p/mapear como herança
-@DiscriminatorColumn(name="tipo",length = 2, discriminatorType = DiscriminatorType.STRING)
-@DiscriminatorValue("AL")//depois tem que inserir essa anotação no aluno bolsista com AB ou qualque ourto nome
+//@DiscriminatorColumn(name="tipo",length = 2, discriminatorType = DiscriminatorType.STRING)
+//@DiscriminatorValue("AL")depois tem que inserir essa anotação no aluno bolsista com AB ou qualque ourto nome
 /*@Inheritance (strategy = InheritanceType.SINGLE_TABLE) TABLE_PER_CLASS) para cada classe concreta vou ter uma tabela
 caso momente essa anotação, vai ser criado uma unica tabela juntando as sua  com se fosse SINGLE_TABLE /anotação p/mapear como herança
 @DiscriminatorColumn(name="tipo",length = 2, discriminatorType = DiscriminatorType.STRING)*/
