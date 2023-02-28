@@ -13,22 +13,45 @@ public class Contador extends Application{
 	
 	private int contador = 0;
 	
+	private void atualizarLabelNumero(Label label) {
+		label.setText(Integer.toString(contador));
+		
+		label.getStyleClass().remove("verde");
+		label.getStyleClass().remove("vermelho");
+		
+		if(contador > 0) {
+			label.getStyleClass().add("vermelho");
+
+		}else if (contador<0){
+			label.getStyleClass().add("verde");
+
+		}
+	}
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
 		Label labelTitulo = new Label("Contador");
+		labelTitulo.getStyleClass().add("titulo");
+
 		Label labelNumero = new Label("0");
+		labelNumero.getStyleClass().add("numero");
 		
 		Button botaoIncremento = new Button("+");
+		botaoIncremento.getStyleClass().add("botoes");
 		Button botaoDecremento = new Button("-");
+		botaoDecremento.getStyleClass().add("botoes");
+
 		botaoDecremento.setOnAction(e->{
 			contador --;
 			labelNumero.setText(Integer.toString(contador));
+			atualizarLabelNumero(labelNumero);
 		});
 		
 		botaoIncremento.setOnAction(e->{
 			contador ++;
 			labelNumero.setText(Integer.toString(contador));
+			atualizarLabelNumero(labelNumero);
 		});
 		
 		HBox boxBotoes = new HBox();
@@ -37,14 +60,18 @@ public class Contador extends Application{
 		boxBotoes.getChildren().add(botaoDecremento);
 		boxBotoes.getChildren().add(botaoIncremento);
 		
-		VBox boxPrincipal =  new VBox();
-		boxPrincipal.setAlignment(Pos.CENTER);
-		boxPrincipal.getChildren().add(labelTitulo);
-		boxPrincipal.getChildren().add(labelNumero);
-		boxPrincipal.getChildren().add(boxBotoes);
+		VBox boxConteudo =  new VBox();//conteudo
+		boxConteudo.getStyleClass().add("conteudo");
+		boxConteudo.setAlignment(Pos.CENTER);
+		boxConteudo.getChildren().add(labelTitulo);
+		boxConteudo.getChildren().add(labelNumero);
+		boxConteudo.getChildren().add(boxBotoes);
 
-		Scene cenaPrincipal = new Scene(boxPrincipal,400,400);
-		
+		String caminhoCss = getClass().getResource("/basico/Contador.css").toExternalForm();
+ 		Scene cenaPrincipal = new Scene(boxConteudo,400,400);
+ 		cenaPrincipal.getStylesheets().add(caminhoCss);//consumindo o arquivo css
+		cenaPrincipal.getStylesheets().add("https://fonts.googleapis.com/css2?family=Oswald");
+ 		
 		primaryStage.setScene(cenaPrincipal);
 		primaryStage.show();
 		
