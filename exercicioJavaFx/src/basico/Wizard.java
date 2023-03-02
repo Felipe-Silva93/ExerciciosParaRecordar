@@ -14,17 +14,27 @@ public class Wizard extends Application{
 	private Scene passo2;
 	private Scene passo3;
 	
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		janela = primaryStage;
 		
 		criarPasso1();
-		primaryStage.setScene(passo1);
-		primaryStage.setTitle("Wizard");
-		primaryStage.show();
+		criarPasso2();
+		criarPasso3();
+		janela.setScene(passo1);
+		janela.setTitle("Wizard :: Passo 1");
+		janela.show();
 	}
+	
 	
 	private void criarPasso1() {
 		Button proximoPasso = new Button("Ir Para Passo 2 >>");
+		
+		proximoPasso.setOnAction(e->{
+			janela.setScene(passo2);
+			janela.setTitle("Wizard :: Passo 2");
+		});
 		
 		HBox box = new HBox();
 		box.setAlignment(Pos.CENTER);
@@ -32,6 +42,50 @@ public class Wizard extends Application{
 		
 		passo1 = new Scene(box, 400, 400);
 	}
+	
+	private void criarPasso2() {
+		
+		Button proximoPasso = new Button("Ir Para Passo 3 >>");
+		proximoPasso.setOnAction(e->{
+			janela.setTitle("Wizard :: Passo 3");
+
+			janela.setScene(passo3);
+		});
+		
+		Button proximoAnterior = new Button("<< Ir Para Passo 1 ");
+		proximoAnterior.setOnAction(e->{
+			janela.setScene(passo1);
+		});
+		
+		
+		HBox box = new HBox();
+		box.setAlignment(Pos.CENTER);
+		box.getChildren().add(proximoPasso);
+		box.getChildren().add(proximoAnterior);
+
+		
+		passo2 = new Scene(box, 400, 400);
+	}
+	private void criarPasso3() {
+		Button proximoAnterior = new Button("<< Ir Para Passo 1 ");
+		proximoAnterior.setOnAction(e->{
+			janela.setScene(passo2);
+		});
+		
+		Button proximoPasso = new Button("Finalizar");
+		proximoPasso.setOnAction(e->{
+			System.exit(0);
+		});
+		
+		HBox box = new HBox();
+		box.setAlignment(Pos.CENTER);
+		box.getChildren().add(proximoPasso);
+		box.getChildren().add(proximoAnterior);
+		
+		passo3 = new Scene(box, 400, 400);
+
+	}
+	
 	
 	public static void main(String[] args) {
 		launch(args);
