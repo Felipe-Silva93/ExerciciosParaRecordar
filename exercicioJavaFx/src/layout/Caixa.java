@@ -1,11 +1,15 @@
 package layout;
 
 
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 
 public class Caixa extends HBox{
 	
@@ -28,9 +32,18 @@ public class Caixa extends HBox{
 		setMinWidth(largura);
 		setMinHeight(altura);
 		
-		BackgroundFill fill = new BackgroundFill(Color.web(cores[i]), null, getInsets());
+		BackgroundFill fill = new BackgroundFill(Color.web(cores[i++]), CornerRadii.EMPTY, Insets.EMPTY);
 		
 		setBackground(new Background(fill));
+		
+		if(i==6) i=0;
+	}
+	
+	public Caixa comTexto(String texto) {
+		Label label = new Label(texto);
+		label.setFont(new Font(24));
+		getChildren().add(label);
+		return this;
 	}
 
 }
