@@ -1,5 +1,7 @@
 package layout;
 
+
+import javafx.application.Platform;
 import javafx.scene.layout.StackPane;
 
 public class TesteStackPane extends StackPane{
@@ -23,7 +25,26 @@ public class TesteStackPane extends StackPane{
 				getChildren().get(5).toBack();
 
 			}
-		
 		});
+			//trabalhando com thread com javafx
+			Thread t = new Thread(()-> {
+				while(true) {
+					try {
+						Thread.sleep(3000);//da uma pausa de 3 segundos
+						
+						Platform.runLater(()->{//altera
+							getChildren().get(0).toFront();
+
+						});//atualizar a tela no momento certo
+						
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						System.out.println(e1.getMessage());
+					}
+
+				}
+			});
+		t.setDaemon(true);//se a thread principal parar tudo vai parar
+		t.start();
 	}
 }
