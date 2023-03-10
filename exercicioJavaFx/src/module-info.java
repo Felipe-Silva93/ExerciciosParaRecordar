@@ -14,4 +14,5 @@ module exercicioJavaFx {
 	opens basico;
 	opens layout;
 	opens fxml ;
+	opens calculadoraFX;
 }
