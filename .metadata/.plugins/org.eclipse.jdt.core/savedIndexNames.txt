@@ -72,8 +72,8 @@ INDEX VERSION 1.131+/home/felipe/Área de Trabalho/ExerciciosParaRecordar/.metad
 644647548.index
 110471660.index
 3035662127.index
-3074364272.index
 2809163957.index
+3074364272.index
 2571977157.index
 1782198334.index
 2191428831.index
