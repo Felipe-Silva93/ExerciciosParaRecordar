@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.exercicios.exercicioSB.model.entities.Cliente;
+
 @RestController
 @RequestMapping
 public class ClienteControler {
