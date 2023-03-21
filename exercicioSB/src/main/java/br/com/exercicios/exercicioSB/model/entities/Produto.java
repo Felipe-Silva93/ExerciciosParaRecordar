@@ -1,10 +1,9 @@
 package br.com.exercicios.exercicioSB.model.entities;
 
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Produto {
@@ -14,6 +13,8 @@ public class Produto {
 	private int id;
 	
 	private String nome;
+	
+	
 	
 	
 

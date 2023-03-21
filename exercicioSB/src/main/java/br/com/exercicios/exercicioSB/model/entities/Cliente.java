@@ -10,10 +10,9 @@ import javax.persistence.GenerationType;
 
 
 
-@Entity
+
 public class Cliente {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	private int id;
 	private String nome;
 	private String cpf;
